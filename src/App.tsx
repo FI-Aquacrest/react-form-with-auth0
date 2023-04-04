@@ -1,12 +1,18 @@
 import React from 'react';
-import { Container } from '@mui/material';
+import { Container, Paper } from '@mui/material';
 import { Box } from '@mui/system';
+import TopBar from './layout/TopBar';
 
 function App() {
   return (
-    <Container maxWidth='lg'>
-      <Box sx={{ width: '100%', height: '20vh', bgcolor: 'blue' }} />
-    </Container>
+    <Box sx={{ bgcolor: 'lightgray', height: '100vh' }}>
+      <Container maxWidth="lg" disableGutters>
+        <Paper>
+          <TopBar />
+          <Box sx={{ width: '100%', height: '20vh' }} />
+        </Paper>
+      </Container>
+    </Box>
   );
 }
 
