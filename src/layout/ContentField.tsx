@@ -6,11 +6,7 @@ interface ContentProps {
 }
 
 const ContentField = (props: ContentProps) => {
-  return (
-    <Box sx={{ width: '100%', height: '20vh', p: 5, pt: 10 }}>
-      {props.children}
-    </Box>
-  );
+  return <Box sx={{ width: '100%', p: 5, pt: 10 }}>{props.children}</Box>;
 };
 
 export default ContentField;

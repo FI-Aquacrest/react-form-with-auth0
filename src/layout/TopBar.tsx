@@ -51,7 +51,7 @@ const TopBar = () => {
       <List>
         {navItems.map((item) => (
           <ListItem key={item.title} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }} href={item.href}>
+            <ListItemButton href={item.href}>
               {item.icon && <ListItemIcon>{item.icon}</ListItemIcon>}
               <ListItemText
                 primary={item.title}
