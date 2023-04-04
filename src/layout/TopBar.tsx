@@ -17,30 +17,41 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import HomeIcon from '@mui/icons-material/Home';
 import LogoutIcon from '@mui/icons-material/Logout';
-
-const navItems = [
-  {
-    title: 'Home',
-    href: '#',
-    icon: <HomeIcon />,
-  },
-  {
-    title: 'Varaani',
-    href: 'https://varaani.com/',
-  },
-  {
-    title: 'Logout',
-    href: '#',
-    icon: <LogoutIcon />,
-  },
-];
+import { useAuth0 } from '@auth0/auth0-react';
+import { useNavigate } from 'react-router-dom';
 
 const TopBar = () => {
+  const { logout } = useAuth0();
+  const navigate = useNavigate();
+
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const handleDrawerToggle = () => {
     setDrawerOpen((isOpen) => !isOpen);
   };
+
+  const navItems = [
+    {
+      title: 'Home',
+      href: '',
+      icon: <HomeIcon />,
+      onClick: () => {
+        navigate('/');
+      },
+    },
+    {
+      title: 'Varaani',
+      href: 'https://varaani.com/',
+    },
+    {
+      title: 'Logout',
+      href: '',
+      icon: <LogoutIcon />,
+      onClick: () => {
+        logout({ logoutParams: { returnTo: window.location.origin } });
+      },
+    },
+  ];
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
@@ -51,7 +62,7 @@ const TopBar = () => {
       <List>
         {navItems.map((item) => (
           <ListItem key={item.title} disablePadding>
-            <ListItemButton href={item.href}>
+            <ListItemButton href={item.href} onClick={item.onClick}>
               {item.icon && <ListItemIcon>{item.icon}</ListItemIcon>}
               <ListItemText
                 primary={item.title}
@@ -91,6 +102,7 @@ const TopBar = () => {
                 color="inherit"
                 href={item.href}
                 startIcon={item.icon}
+                onClick={item.onClick}
               >
                 {item.title}
               </Button>

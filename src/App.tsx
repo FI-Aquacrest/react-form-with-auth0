@@ -1,32 +1,36 @@
 import React from 'react';
-import { Container, Paper, useMediaQuery, useTheme } from '@mui/material';
-import { Box } from '@mui/system';
-import TopBar from './layout/TopBar';
-import ContentField from './layout/ContentField';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import AppLayout from './AppLayout';
 import UserForm from './views/UserForm';
-import BottomFooter from './layout/BottomFooter';
+import Summary from './views/Summary';
+import { useAuth0 } from '@auth0/auth0-react';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <AppLayout />,
+    children: [
+      {
+        path: '/',
+        element: <UserForm />,
+      },
+      {
+        path: '/summary',
+        element: <Summary />,
+      },
+    ],
+  },
+  {},
+]);
 
 function App() {
-  const theme = useTheme();
-  const mobileView = useMediaQuery(theme.breakpoints.down('sm'));
+  const { isAuthenticated, isLoading, loginWithRedirect } = useAuth0();
 
-  return (
-    <Box sx={{ bgcolor: 'lightgray', height: '100vh' }}>
-      <Container maxWidth="sm" disableGutters>
-        <Paper>
-          <Box sx={{ height: mobileView ? '95vh' : '85vh' }}>
-            <TopBar />
-            <ContentField>
-              <UserForm />
-            </ContentField>
-          </Box>
-          <Box sx={{ height: '5vh' }}>
-            <BottomFooter />
-          </Box>
-        </Paper>
-      </Container>
-    </Box>
-  );
+  if (!isLoading && !isAuthenticated) {
+    loginWithRedirect();
+  }
+
+  return isAuthenticated ? <RouterProvider router={router} /> : null;
 }
 
 export default App;

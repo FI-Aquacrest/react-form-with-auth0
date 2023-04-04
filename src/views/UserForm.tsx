@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Grid, TextField, TextFieldProps } from '@mui/material';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 
 interface Inputs {
   name: string;
@@ -16,7 +17,12 @@ const UserForm = () => {
   } = useForm<Inputs>({
     mode: 'all',
   });
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+  const navigate = useNavigate();
+
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    console.log(data);
+    navigate('/summary');
+  };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
