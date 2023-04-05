@@ -4,6 +4,8 @@ import App from './App';
 import { ThemeProvider, CssBaseline, createTheme } from '@mui/material';
 import lightThemeOptions from './themes/lightThemeOptions';
 import { Auth0Provider } from '@auth0/auth0-react';
+import { Provider as ReduxProvider } from 'react-redux';
+import { store } from './redux/store';
 
 import './index.css';
 import '@fontsource/roboto/300.css';
@@ -26,10 +28,12 @@ root.render(
         redirect_uri: window.location.origin,
       }}
     >
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <App />
-      </ThemeProvider>
+      <ReduxProvider store={store}>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <App />
+        </ThemeProvider>
+      </ReduxProvider>
     </Auth0Provider>
   </React.StrictMode>
 );

@@ -2,8 +2,11 @@ import React from 'react';
 import { Button, Grid, TextField, TextFieldProps } from '@mui/material';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
+import { useAppDispatch } from '../redux/hooks';
+import { update } from '../redux/slices/formSlice';
+import { useAuth0 } from '@auth0/auth0-react';
 
-interface Inputs {
+export interface FormType {
   name: string;
   email: string;
   age: number;
@@ -13,14 +16,16 @@ const UserForm = () => {
   const {
     control,
     handleSubmit,
-    formState: { errors },
-  } = useForm<Inputs>({
+    formState: { errors, isValid },
+  } = useForm<FormType>({
     mode: 'all',
   });
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+  const { user } = useAuth0();
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
-    console.log(data);
+  const onSubmit: SubmitHandler<FormType> = (data) => {
+    dispatch(update(data));
     navigate('/summary');
   };
 
@@ -46,6 +51,7 @@ const UserForm = () => {
         <Grid item>
           <Controller
             name={'email'}
+            defaultValue={user?.email}
             control={control}
             rules={{
               pattern: {
@@ -96,7 +102,7 @@ const UserForm = () => {
             type="submit"
             variant="contained"
             fullWidth
-            disabled={Object.keys(errors).length > 0}
+            disabled={!isValid}
           >
             Submit
           </Button>
