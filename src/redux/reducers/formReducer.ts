@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { FormType } from '../../views/UserForm';
+import { FormType } from '../../views/UserForm/UserForm';
 
 const initialState: FormType = {
   name: '',

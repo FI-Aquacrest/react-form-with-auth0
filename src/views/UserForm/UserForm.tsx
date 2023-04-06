@@ -2,8 +2,8 @@ import React from 'react';
 import { Button, Grid, TextField, TextFieldProps } from '@mui/material';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import { useAppDispatch } from '../redux/hooks';
-import { update } from '../redux/slices/formSlice';
+import { useAppDispatch } from '../../redux/hooks';
+import { update } from '../../redux/reducers/formReducer';
 import { useAuth0 } from '@auth0/auth0-react';
 
 export interface FormType {

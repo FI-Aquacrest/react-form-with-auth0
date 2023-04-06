@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAppSelector } from '../redux/hooks';
+import { useAppSelector } from '../../redux/hooks';
 import { Divider, Grid, Typography } from '@mui/material';
 
 const Summary = () => {

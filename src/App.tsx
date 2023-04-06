@@ -1,8 +1,8 @@
 import React from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import AppLayout from './AppLayout';
-import UserForm from './views/UserForm';
-import Summary from './views/Summary';
+import UserForm from './views/UserForm/UserForm';
+import Summary from './views/Summary/Summary';
 import { useAuth0 } from '@auth0/auth0-react';
 
 const router = createBrowserRouter([
