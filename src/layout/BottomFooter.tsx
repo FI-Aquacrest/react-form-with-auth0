@@ -5,8 +5,7 @@ const BottomFooter = () => {
   return (
     <Box component="footer" sx={{ position: 'static', width: '100%' }}>
       <Typography textAlign="center">
-        {'©Sami Pitkänen 2023 | '}
-        <a href="#">Used libraries</a>
+        {'©Sami Pitkänen 2023'}
       </Typography>
     </Box>
   );
