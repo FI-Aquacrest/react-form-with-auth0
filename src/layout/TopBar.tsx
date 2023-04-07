@@ -19,6 +19,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { useAuth0 } from '@auth0/auth0-react';
 import { useNavigate } from 'react-router-dom';
+import { webOrigin } from '..';
 
 const TopBar = () => {
   const { logout } = useAuth0();
@@ -48,7 +49,7 @@ const TopBar = () => {
       href: '',
       icon: <LogoutIcon />,
       onClick: () => {
-        logout({ logoutParams: { returnTo: window.location.origin } });
+        logout({ logoutParams: { returnTo: webOrigin } });
       },
     },
   ];
