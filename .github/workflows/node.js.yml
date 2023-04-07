@@ -31,7 +31,7 @@ jobs:
         run: |
           git config --global user.name Sami Pitkänen
           git config --global user.email sami.waltteri@hotmail.com
-          git remote set-url origin https://fi-aquacrest.github.io/react-form-with-auth0
+          git remote set-url origin https://github.com/FI-Aquacrest/react-form-with-auth0.git
           npm run deploy
         env:
           user_name: 'github-actions[bot]'
