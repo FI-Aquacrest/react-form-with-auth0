@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-form-with-auth0/static/css/main.0db34099.css",
-    "main.js": "/react-form-with-auth0/static/js/main.3e065049.js",
+    "main.js": "/react-form-with-auth0/static/js/main.1451da55.js",
     "static/media/roboto-all-500-normal.woff": "/react-form-with-auth0/static/media/roboto-all-500-normal.0ab669b7a0d19b178f57.woff",
     "static/media/roboto-all-700-normal.woff": "/react-form-with-auth0/static/media/roboto-all-700-normal.a457fde362a540fcadff.woff",
     "static/media/roboto-all-400-normal.woff": "/react-form-with-auth0/static/media/roboto-all-400-normal.c5d001fa922fa66a147f.woff",
@@ -36,10 +36,10 @@
     "static/media/roboto-greek-ext-700-normal.woff2": "/react-form-with-auth0/static/media/roboto-greek-ext-700-normal.bd9854c751441ccc1a70.woff2",
     "index.html": "/react-form-with-auth0/index.html",
     "main.0db34099.css.map": "/react-form-with-auth0/static/css/main.0db34099.css.map",
-    "main.3e065049.js.map": "/react-form-with-auth0/static/js/main.3e065049.js.map"
+    "main.1451da55.js.map": "/react-form-with-auth0/static/js/main.1451da55.js.map"
   },
   "entrypoints": [
     "static/css/main.0db34099.css",
-    "static/js/main.3e065049.js"
+    "static/js/main.1451da55.js"
   ]
 }
