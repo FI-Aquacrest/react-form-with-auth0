@@ -19,7 +19,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { useAuth0 } from '@auth0/auth0-react';
 import { useNavigate } from 'react-router-dom';
-import { webOrigin } from '..';
+import { webOrigin } from '../index';
 
 const TopBar = () => {
   const { logout } = useAuth0();
@@ -49,6 +49,8 @@ const TopBar = () => {
       href: '',
       icon: <LogoutIcon />,
       onClick: () => {
+        console.log(webOrigin);
+        console.log(window.location);
         logout({ logoutParams: { returnTo: webOrigin } });
       },
     },
@@ -57,7 +59,7 @@ const TopBar = () => {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
+        REACT FORM
       </Typography>
       <Divider />
       <List>
