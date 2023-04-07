@@ -1,46 +1,24 @@
-# Getting Started with Create React App
+# React form with Auth0 authorization
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was done for showcase purposes for Varaani Works Oy. Huge thanks for their permission to keep this repository public!
 
-## Available Scripts
+## Running the applications
 
-In the project directory, you can run:
+This project is running at https://fi-aquacrest.github.io/react-form-with-auth0/. You will be redirected and required to log in with your email in order to use the application.
 
-### `npm start`
+To run this project locally, you can download the repository and from the project root, run `npm install` and once done, `npm start`. The app will load and open at [localhost:3000/](localhost:3000/) by default.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## App requirements
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The initial requirements for the application were as follows (loosely translated):
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Login with access blocking if not logged in
+- Display a simple form page after logging in, asking the user's name, email and age
+- Display a second page after submitting the form, which displays the given input in a freeform fashion
+- Form must use a form library (formik / react-hook-forms ect.)
+- Redux for delivering information between the views
+- Navigation bar while logged in, which has a button to return to the form page, a link to varaani.com and a button to log out
+- Replace the navigation bar with a hamburger menu on mobile
+- Components styled with css-modules, styled-components or similar
+- TypeScript must be used
+- Tests that test something
