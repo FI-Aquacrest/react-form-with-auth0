@@ -1,5 +1,5 @@
 import React from 'react';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, createHashRouter } from 'react-router-dom';
 import AppLayout from './AppLayout';
 import UserForm from './views/UserForm/UserForm';
 import Summary from './views/Summary/Summary';
@@ -22,7 +22,7 @@ export const routesConfig = [
   },
   {},
 ];
-const router = createBrowserRouter(routesConfig);
+const router = createHashRouter(routesConfig);
 
 function App() {
   const { isAuthenticated, isLoading, loginWithRedirect } = useAuth0();
