@@ -31,7 +31,9 @@ function App() {
     loginWithRedirect();
   }
 
-  return isAuthenticated ? <RouterProvider router={router} /> : null;
+  return !isLoading && isAuthenticated ? (
+    <RouterProvider router={router} />
+  ) : null;
 }
 
 export default App;
