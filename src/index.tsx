@@ -19,7 +19,7 @@ const root = ReactDOM.createRoot(
 
 const theme = createTheme(lightThemeOptions);
 
-export const webOrigin =
+const webOrigin =
   window.location.hostname === 'fi-aquacrest.github.io'
     ? 'https://fi-aquacrest.github.io/react-form-with-auth0/'
     : window.location.origin;

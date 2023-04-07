@@ -19,7 +19,11 @@ import HomeIcon from '@mui/icons-material/Home';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { useAuth0 } from '@auth0/auth0-react';
 import { useNavigate } from 'react-router-dom';
-import { webOrigin } from '../index';
+
+const webOrigin =
+  window.location.hostname === 'fi-aquacrest.github.io'
+    ? 'https://fi-aquacrest.github.io/react-form-with-auth0/'
+    : window.location.origin;
 
 const TopBar = () => {
   const { logout } = useAuth0();
@@ -49,8 +53,6 @@ const TopBar = () => {
       href: '',
       icon: <LogoutIcon />,
       onClick: () => {
-        console.log(webOrigin);
-        console.log(window.location);
         logout({ logoutParams: { returnTo: webOrigin } });
       },
     },
