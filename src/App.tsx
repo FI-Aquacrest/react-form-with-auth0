@@ -5,7 +5,7 @@ import UserForm from './views/UserForm/UserForm';
 import Summary from './views/Summary/Summary';
 import { useAuth0 } from '@auth0/auth0-react';
 
-const router = createBrowserRouter([
+export const routesConfig = [
   {
     path: '/',
     element: <AppLayout />,
@@ -21,7 +21,8 @@ const router = createBrowserRouter([
     ],
   },
   {},
-]);
+];
+const router = createBrowserRouter(routesConfig);
 
 function App() {
   const { isAuthenticated, isLoading, loginWithRedirect } = useAuth0();
