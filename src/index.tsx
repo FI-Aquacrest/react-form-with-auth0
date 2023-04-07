@@ -25,7 +25,7 @@ root.render(
       domain="dev-0yuvhzezjxqq2qjx.us.auth0.com"
       clientId="w9g9wV7kCKhFyJcZptWGxyQHPFbKuyfs"
       authorizationParams={{
-        redirect_uri: window.location.hostname,
+        redirect_uri: window.location.origin,
       }}
     >
       <ReduxProvider store={setupStore()}>
